@@ -68,5 +68,3 @@ void GameScreen::debugPrint(std::stringstream stream)
 
 	OutputDebugStringA(str.c_str());
 }
-	delete world;
-}
