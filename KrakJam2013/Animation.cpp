@@ -7,9 +7,9 @@ void Animation::Load(std::string filename, uint frameCount, uint _frameDuration)
     assert(_frameDuration);
     bool result = spriteSheet.loadFromFile(filename);
     assert(result);
-    uint frameWidth = spriteSheet.getSize().x / frameCount;
+    frameWidth = spriteSheet.getSize().x / frameCount;
     assert(frameWidth * frameCount == spriteSheet.getSize().x);
-    uint frameHeight = spriteSheet.getSize().y;
+    frameHeight = spriteSheet.getSize().y;
     frames.resize(frameCount);
     for (int i = 0 ; i < frameCount ; ++i)
     {
@@ -183,4 +183,9 @@ void Animation::SetScale(float2 _scale)
 void Animation::SetColor(sf::Color _color)
 {
     color = _color;
+}
+
+sf::Vector2u Animation::GetSize()
+{
+	return sf::Vector2u(frameWidth, frameHeight);
 }

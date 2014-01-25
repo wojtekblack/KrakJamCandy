@@ -3,6 +3,7 @@
 #include "Screen.hpp"
 #include <string>
 #include "Monster.hpp"
+#include "Player.h"
 
 class Dot;
 
@@ -21,6 +22,7 @@ class GameScreen : public Screen
     sf::Font arialFont;
     sf::Texture monsterImage;
     Monster monster;
+	Player player;
 
 	std::vector<Dot*> dots;
 
@@ -31,7 +33,7 @@ class GameScreen : public Screen
     void Load(void);
     void Init(void);
     void HandleEvent(sf::Event const & event);
-    void Update(void);
+    void Update(float deltaTime);
     void Render(void);
     void Unload(void);
 

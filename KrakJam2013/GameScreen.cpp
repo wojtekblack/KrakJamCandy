@@ -12,6 +12,7 @@ void GameScreen::Load(void)
     arialFont.loadFromFile("data/arial.ttf");
     assert(monsterImage.loadFromFile("data/monster.png"));
     monster.Load(monsterImage, sf::Vector2f(100.0f, 200.0f));
+	player.Load("data/player.png", 1, 5, world);
 
 	b2Vec2 gravity(0.0f, 0.0f);
 	world = new b2World(gravity);
@@ -26,6 +27,7 @@ void GameScreen::Init(void)
     sampleText.setStyle(sf::Text::Bold | sf::Text::Underlined);
     sampleText.setPosition(10.0f, 10.0f);
 
+	player.Init(sf::Vector2f(400, 300), sf::Vector2f(50.f, 50.f));
 	generateDots(5);
 }
 
@@ -33,13 +35,15 @@ void GameScreen::HandleEvent(sf::Event const & event)
 {
 }
 
-void GameScreen::Update(void)
+void GameScreen::Update(float deltaTime)
 {
+	player.Update(deltaTime);
     monster.Update(sf::Vector2f(400.0f, 300.0f));
 }
 
 void GameScreen::Render(void)
 {
+	player.Render();
     monster.Render();
     window.draw(sampleText);
 }

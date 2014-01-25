@@ -2,13 +2,8 @@
 #include "Player.h"
 
 
-Player::Player(sf::Vector2f startPos, sf::Vector2u windowSize, b2World *pWorld)
+Player::Player()
 {
-	_position = startPos;
-	_windowSize = windowSize;
-
-	b2BodyDef bDef;
-	bDef.type = b2_dynamicBody;
 }
 
 
@@ -16,26 +11,56 @@ Player::~Player()
 {
 }
 
-void Player::update(float deltaTime)
+void Player::Init(sf::Vector2f initPos, sf::Vector2f initVel)
 {
-	sf::Vector2f newPosition;
+	_position = initPos;
+	_velocity = initVel;
+
+	Animation::Sequence sequence;
+	sequence.name = "main";
+	sequence.startFrame = 0;
+	sequence.endFrame = 0;
+	playerAnimation.AddSequence(sequence);
+
+	playerAnimation.SetScale(1.0);
+	playerAnimation.SetColor(sf::Color::Red);
+}
+
+void Player::Load(std::string filename, uint frameCount, uint frameDuration, b2World *pWorld)
+{
+	_windowSize = sf::Vector2u(800, 600);
+	playerAnimation.Load(filename, frameCount, frameDuration);
+}
+
+void Player::Update(float deltaTime)
+{
+	sf::Vector2f newPosition = _position;
 
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up) ||
 		sf::Keyboard::isKeyPressed(sf::Keyboard::W))
-		newPosition.y = _position.y - _velocity.y * deltaTime;
+		newPosition.y -= _velocity.y * deltaTime;
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down) ||
 		sf::Keyboard::isKeyPressed(sf::Keyboard::S))
-		newPosition.y = _position.y + _velocity.y * deltaTime;
+		newPosition.y += _velocity.y * deltaTime;
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left) ||
 		sf::Keyboard::isKeyPressed(sf::Keyboard::A))
-		newPosition.x = _position.x - _velocity.x * deltaTime;
+		newPosition.x -= _velocity.x * deltaTime;
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right) ||
 		sf::Keyboard::isKeyPressed(sf::Keyboard::D))
-		newPosition.x = _position.x + _velocity.x * deltaTime;
+		newPosition.x += _velocity.x * deltaTime;
 
 	_position.x = (newPosition.x < 0) ? 0 : newPosition.x;
-	_position.x = (newPosition.x > _windowSize.x) ? _windowSize.x : _position.x;
+	_position.x = (newPosition.x + playerAnimation.GetSize().x > _windowSize.x) ? _windowSize.x : _position.x;
 
 	_position.y = (newPosition.y < 0) ? 0 : newPosition.y;
-	_position.y = (newPosition.y > _windowSize.y) ? _windowSize.y : _position.y;
+	_position.y = (newPosition.y + playerAnimation.GetSize().y > _windowSize.y) ? _windowSize.y : _position.y;
+
+	playerAnimation.SetPosition(_position);
+	playerAnimation.Update();
+	playerAnimation.PlaySequence("main", Animation::Forward, 0);
+}
+
+void Player::Render()
+{
+	playerAnimation.Render();
 }

@@ -33,6 +33,8 @@ class Animation
     sf::Color color;
     uint frameDuration;
     uint currentDuration;
+	uint frameWidth;
+	uint frameHeight;
 
     public:
     void Load(std::string filename, uint frameCount, uint _frameDuration);
@@ -45,4 +47,5 @@ class Animation
     void SetScale(float _scale);
     void SetScale(float2 _scale);
     void SetColor(sf::Color _color);
+	sf::Vector2u GetSize();
 };

@@ -10,10 +10,13 @@ public:
 
 	Animation playerAnimation;
 
-	Player(sf::Vector2f startPos, sf::Vector2u windowSize, b2World *pWorld);
+	Player();
 	~Player();
 
-	void update(float deltaTime);
+	void Update(float deltaTime);
+	void Render();
+	void Load(std::string filename, uint frameCount, uint frameDuration, b2World *pWorld);
+	void Init(sf::Vector2f startPos, sf::Vector2f initVel);
 
 };
 

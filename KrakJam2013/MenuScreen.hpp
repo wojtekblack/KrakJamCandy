@@ -12,7 +12,7 @@ class MenuScreen : public Screen
     void Load(void);
     void Init(void);
     void HandleEvent(sf::Event const & event);
-    void Update(void);
+    void Update(float deltaTime);
     void Render(void);
     void Unload(void);
 };

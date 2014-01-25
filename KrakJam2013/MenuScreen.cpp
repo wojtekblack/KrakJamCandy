@@ -20,7 +20,7 @@ void MenuScreen::HandleEvent(sf::Event const & event)
 {
 }
 
-void MenuScreen::Update(void)
+void MenuScreen::Update(float deltaTime)
 {
 }
 
