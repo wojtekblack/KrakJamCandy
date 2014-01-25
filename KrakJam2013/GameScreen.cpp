@@ -5,6 +5,8 @@ void GameScreen::Load(void)
 {
     sampleText.setString("Hello world");
     arialFont.loadFromFile("data/arial.ttf");
+    assert(monsterImage.loadFromFile("data/monster.png"));
+    monster.Load(monsterImage, sf::Vector2f(100.0f, 200.0f));
 }
 
 void GameScreen::Init(void)
@@ -23,10 +25,12 @@ void GameScreen::HandleEvent(sf::Event const & event)
 
 void GameScreen::Update(void)
 {
+    monster.Update(sf::Vector2f(400.0f, 300.0f));
 }
 
 void GameScreen::Render(void)
 {
+    monster.Render();
     window.draw(sampleText);
 }
 

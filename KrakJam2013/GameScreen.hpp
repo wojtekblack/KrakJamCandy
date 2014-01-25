@@ -1,12 +1,15 @@
 #pragma once
 
 #include "Screen.hpp"
+#include "Monster.hpp"
 
 class GameScreen : public Screen
 {
     private:
     sf::Text sampleText;
     sf::Font arialFont;
+    sf::Texture monsterImage;
+    Monster monster;
 
     public:
     void Load(void);
