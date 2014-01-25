@@ -16,8 +16,7 @@ int main(void)
     screenManager.SetCurrentScreen(gameScreen);
     screenManager.Load();
     screenManager.Init();
-    window.create(sf::VideoMode(800, 600, 32), "SFML Framework",
-        sf::Style::Titlebar | sf::Style::Close);
+    window.create(sf::VideoMode(800, 600, 32), "SFML Framework", sf::Style::Titlebar | sf::Style::Close);
     window.setVerticalSyncEnabled(true);
     sf::Clock clock;
     float dt = 0.0f;

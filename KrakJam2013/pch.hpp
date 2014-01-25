@@ -19,6 +19,8 @@
 #include "PopupText.hpp"
 #include "Parallax.hpp"
 
+#include <Box2D\Box2D.h>
+
 #pragma warning(disable : 4018)
 
 class MenuScreen;

@@ -2,6 +2,7 @@
 
 #include "Screen.hpp"
 #include <string>
+#include "Monster.hpp"
 
 class Dot;
 
@@ -18,6 +19,8 @@ class GameScreen : public Screen
     private:
     sf::Text sampleText;
     sf::Font arialFont;
+    sf::Texture monsterImage;
+    Monster monster;
 
 	std::vector<Dot*> dots;
 
