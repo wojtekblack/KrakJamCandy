@@ -5,21 +5,18 @@
 
 sf::RenderWindow window;
 ScreenManager screenManager;
-SampleScreen sampleScreen;
 MenuScreen menuScreen;
 GameScreen gameScreen;
 const float ONE_SIXTIETH = 1.0f / 60.0f;
 
 int main(void)
 {
-    screenManager.AddScreen(sampleScreen);
     screenManager.AddScreen(menuScreen);
     screenManager.AddScreen(gameScreen);
-    screenManager.SetCurrentScreen(sampleScreen);
+    screenManager.SetCurrentScreen(gameScreen);
     screenManager.Load();
     screenManager.Init();
-    window.create(sf::VideoMode(800, 600, 32), "SFML Framework",
-        sf::Style::Titlebar | sf::Style::Close);
+    window.create(sf::VideoMode(800, 600, 32), "SFML Framework", sf::Style::Titlebar | sf::Style::Close);
     window.setVerticalSyncEnabled(true);
     sf::Clock clock;
     float dt = 0.0f;
