@@ -31,9 +31,9 @@ void ScreenManager::HandleEvent(sf::Event const & event)
     (*currentScreen)->HandleEvent(event);
 }
 
-void ScreenManager::Update(float deltaTime)
+void ScreenManager::Update()
 {
-    (*currentScreen)->Update(deltaTime);
+    (*currentScreen)->Update();
 }
 
 void ScreenManager::Render(void)

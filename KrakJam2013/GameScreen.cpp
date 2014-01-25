@@ -27,7 +27,7 @@ void GameScreen::Init(void)
     sampleText.setStyle(sf::Text::Bold | sf::Text::Underlined);
     sampleText.setPosition(10.0f, 10.0f);
 
-	player.Init(sf::Vector2f(400, 300), sf::Vector2f(50.f, 50.f));
+	player.Init(sf::Vector2f(50, 300), sf::Vector2f(5.f, 5.f));
 	generateDots(5);
 }
 
@@ -35,9 +35,9 @@ void GameScreen::HandleEvent(sf::Event const & event)
 {
 }
 
-void GameScreen::Update(float deltaTime)
+void GameScreen::Update()
 {
-	player.Update(deltaTime);
+	player.Update();
     monster.Update(sf::Vector2f(400.0f, 300.0f));
 }
 

@@ -44,7 +44,7 @@ int main(void)
         }
         while (accumulator > ONE_SIXTIETH)
         {
-            screenManager.Update(dt);
+            screenManager.Update();
             accumulator -= ONE_SIXTIETH;
         }
         window.clear(sf::Color(0, 0, 0));

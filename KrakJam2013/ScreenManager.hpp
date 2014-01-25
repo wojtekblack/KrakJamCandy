@@ -14,7 +14,7 @@ class ScreenManager
     void SetCurrentScreen(Screen const & screen);
     void Init(void);
     void HandleEvent(sf::Event const & event);
-    void Update(float deltaTime);
+    void Update();
     void Render(void);
     void Unload(void);
 };

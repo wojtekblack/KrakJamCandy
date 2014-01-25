@@ -13,7 +13,7 @@ public:
 	Player();
 	~Player();
 
-	void Update(float deltaTime);
+	void Update();
 	void Render();
 	void Load(std::string filename, uint frameCount, uint frameDuration, b2World *pWorld);
 	void Init(sf::Vector2f startPos, sf::Vector2f initVel);
