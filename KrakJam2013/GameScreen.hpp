@@ -5,7 +5,8 @@
 class GameScreen : public Screen
 {
     private:
-    //
+    sf::Text sampleText;
+    sf::Font arialFont;
 
     public:
     void Load(void);
