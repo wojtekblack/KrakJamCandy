@@ -14,6 +14,7 @@ Dot::Dot()
 void Dot::init()
 {	
 	colour = static_cast<GameColours>(rand() % GameColoursSIZE);
+
 }
 
 void Dot::collect()
