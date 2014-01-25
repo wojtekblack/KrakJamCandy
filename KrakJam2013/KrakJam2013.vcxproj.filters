@@ -19,6 +19,12 @@
     <Filter Include="Source Files\Framework">
       <UniqueIdentifier>{a16ffa29-f036-40c1-bd19-91bdf59996e4}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Actors">
+      <UniqueIdentifier>{b684ed24-52b7-41c2-b337-bfaee83c9f07}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Actors">
+      <UniqueIdentifier>{29708f41-9445-436e-a9d8-1ebdde200fa9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GameScreen.cpp">
@@ -50,6 +56,9 @@
     </ClCompile>
     <ClCompile Include="SampleScreen.cpp">
       <Filter>Source Files\Framework</Filter>
+    </ClCompile>
+    <ClCompile Include="Dot.cpp">
+      <Filter>Source Files\Actors</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -88,6 +97,9 @@
     </ClInclude>
     <ClInclude Include="Parallax.hpp">
       <Filter>Header Files\Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="Dot.hpp">
+      <Filter>Header Files\Actors</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
