@@ -12,6 +12,9 @@ void GameScreen::Load(void)
     arialFont.loadFromFile("data/arial.ttf");
     assert(monsterImage.loadFromFile("data/monster.png"));
     monster.Load(monsterImage, sf::Vector2f(100.0f, 200.0f));
+
+	b2Vec2 gravity(0.0f, 0.0f);
+	world = new b2World(gravity);
 }
 
 void GameScreen::Init(void)
@@ -64,4 +67,6 @@ void GameScreen::debugPrint(std::stringstream stream)
 	std::getline(stream, str);
 
 	OutputDebugStringA(str.c_str());
+}
+	delete world;
 }

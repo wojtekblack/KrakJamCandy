@@ -25,6 +25,9 @@ class GameScreen : public Screen
 	std::vector<Dot*> dots;
 
     public:
+
+	b2World *world;
+
     void Load(void);
     void Init(void);
     void HandleEvent(sf::Event const & event);
