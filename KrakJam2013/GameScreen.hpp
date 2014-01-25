@@ -12,6 +12,9 @@ class GameScreen : public Screen
     Monster monster;
 
     public:
+
+	b2World *world;
+
     void Load(void);
     void Init(void);
     void HandleEvent(sf::Event const & event);
