@@ -5,7 +5,8 @@
 class MenuScreen : public Screen
 {
     private:
-    //
+    sf::Text sampleText;
+    sf::Font timesFont;
 
     public:
     void Load(void);
