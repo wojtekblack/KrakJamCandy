@@ -20,7 +20,7 @@
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <CharacterSet>MultiByte</CharacterSet>
-    <PlatformToolset>v100</PlatformToolset>
+    <PlatformToolset>v120</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
@@ -42,9 +42,9 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
     <IncludePath>$(VCInstallDir)include;$(VCInstallDir)atlmfc\include;$(WindowsSdkDir)include;$(FrameworkSDKDir)\include;C:\Users\Wojtek\Desktop\KrakJam2014\Box2D_v2.3.0\Box2D;$(IncludePath)</IncludePath>
-    <IncludePath>$(VCInstallDir)include;$(VCInstallDir)atlmfc\include;$(WindowsSdkDir)include;$(FrameworkSDKDir)\include;J:\compo\krakjam2014\KrakJam2014\Box2D_v2.3.0\Box2D;J:\SFML-2.1\include</IncludePath>
+    <IncludePath>$(VCInstallDir)include;$(VCInstallDir)atlmfc\include;$(WindowsSdkDir)include;$(FrameworkSDKDir)\include;J:\compo\krakjam2014\KrakJam2014\Box2D_v2.3.0\Box2D;J:\SFML-2.1\include;$(IncludePath)</IncludePath>
     <LibraryPath>C:\Users\Wojtek\Desktop\KrakJam2014\Box2D_v2.3.0\Box2D\Build\vs2012\bin\Debug;$(VCInstallDir)lib;$(VCInstallDir)atlmfc\lib;$(WindowsSdkDir)lib;$(FrameworkSDKDir)\lib;J:\SFML-2.1\lib;$(LibraryPath)</LibraryPath>
-    <LibraryPath>J:\compo\krakjam2014\KrakJam2014\Box2D_v2.3.0\Box2D\Build\vs2012\bin\Debug;$(VCInstallDir)lib;$(VCInstallDir)atlmfc\lib;$(WindowsSdkDir)lib;$(FrameworkSDKDir)\lib;J:\SFML-2.1\lib</LibraryPath>
+    <LibraryPath>C:\Users\Wojtek\Desktop\KrakJam2014\Box2D_v2.3.0\Box2D\Build\vs2012\bin\Debug;J:\compo\krakjam2014\KrakJam2014\Box2D_v2.3.0\Box2D\Build\vs2012\bin\Debug;$(VCInstallDir)lib;$(VCInstallDir)atlmfc\lib;$(WindowsSdkDir)lib;$(FrameworkSDKDir)\lib;J:\SFML-2.1\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
