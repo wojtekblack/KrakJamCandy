@@ -19,7 +19,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <CharacterSet>Unicode</CharacterSet>
+    <CharacterSet>MultiByte</CharacterSet>
     <PlatformToolset>v120</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
@@ -41,8 +41,8 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>C:\Users\Wojtek\Documents\SFML-2.1\include;C:\Users\Wojtek\Desktop\KrakJam2014\Box2D_v2.3.0\Box2D;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\Users\Wojtek\Desktop\KrakJam2014\Box2D_v2.3.0\Box2D\Build\vs2012\bin\Debug;C:\Users\Wojtek\Documents\SFML-2.1\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(VCInstallDir)include;$(VCInstallDir)atlmfc\include;$(WindowsSdkDir)include;$(FrameworkSDKDir)\include;C:\Users\Wojtek\Desktop\KrakJam2014\Box2D_v2.3.0\Box2D;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Users\Wojtek\Desktop\KrakJam2014\Box2D_v2.3.0\Box2D\Build\vs2012\bin\Debug;$(VCInstallDir)lib;$(VCInstallDir)atlmfc\lib;$(WindowsSdkDir)lib;$(FrameworkSDKDir)\lib;J:\SFML-2.1\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
@@ -89,6 +89,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Animation.cpp" />
+    <ClCompile Include="Dot.cpp" />
     <ClCompile Include="GameScreen.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MenuScreen.cpp" />
@@ -106,6 +107,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Animation.hpp" />
+    <ClInclude Include="Dot.hpp" />
     <ClInclude Include="GameScreen.hpp" />
     <ClInclude Include="MenuScreen.hpp" />
     <ClInclude Include="Miscellaneous.hpp" />
